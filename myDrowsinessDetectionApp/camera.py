@@ -29,7 +29,7 @@ class VideoCamera():
             Deriveshape = faceModel(gray, i)
             Deriveshape = face_utils.shape_to_np(Deriveshape)
 
-            threshTemp = 0.09
+            threshTemp = 0.092
             (lStart, lEnd) = face_utils.FACIAL_LANDMARKS_IDXS["left_eye"]
             (rStart, rEnd) = face_utils.FACIAL_LANDMARKS_IDXS["right_eye"]
             lefteyeBall = Deriveshape[lStart:lEnd]
