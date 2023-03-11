@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>PyStars | Register</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<link rel='stylesheet' type="text/css" href="{% static 'css/app.min.css' %}">
+	<!-- ================== BEGIN core-css ================== -->
+	<!--link href="assets/css/app.min.css" rel="stylesheet" />
+	<!-- ================== END core-css ================== -->
+	
+</head>
+<body>
+	<!-- BEGIN #app -->
+	<h1 class="text-center">PyStars - Drowsiness Detection System</h1>
+	<div id="app" class="app app-full-height app-without-header">
+		<!-- BEGIN register -->
+		<div class="register">
+			<!-- BEGIN register-content -->
+			<div class="register-content">
+			
+				<form action="" method="POST" name="register_form">
+					{% csrf_token %}
+					<h1 class="text-center">Sign Up</h1>
+					<p class="text-muted text-center">Please submit the details as requried</p>
+					{% if messages %}
+						<ul class="messages">
+    					{% for message in messages %}
+							<p {% if message.tags %} class="{{ message.tags }}"{% endif %} style="color:red;">{{ message }}</p>
+    					{% endfor %}
+						
+						</ul>
+						{% endif %}
+					<div class="form-group">
+						<label>First Name <span class="text-danger">*</span></label>
+						<input type="text" class="form-control form-control-lg fs-15px" placeholder="e.g John" name="first_name" required/>
+					</div>
+					<div class="form-group">
+						<label>Last Name <span class="text-danger">*</span></label>
+						<input type="text" class="form-control form-control-lg fs-15px" placeholder="e.g Smith" name="last_name" required/>
+					</div>
+					<div class="form-group">
+						<label>Email Address <span class="text-danger">*</span></label>
+						<input type="text" class="form-control form-control-lg fs-15px" placeholder="username@address.com" name="email_address" required/>
+					</div>
+					<div class="form-group">
+						<label>Mobile Number<span class="text-danger">*</span></label>
+						<input type="text" class="form-control form-control-lg fs-15px" placeholder="+1 (999)-999-9999" name="mobile_number" required/>
+					</div>
+					<div class="form-group">
+						<label>4 Digit PIN<span class="text-danger">*</span></label>
+						<input type="password" class="form-control form-control-lg fs-15px" name="four_digit_pin" required/>
+					</div>
+					<div class="form-group">
+						<label>Confirm 4 Digit PIN<span class="text-danger">*</span></label>
+						<input type="password" class="form-control form-control-lg fs-15px" name="confirm_four_digit_pin" required/>
+					</div>
+					<div class="form-group">
+						<label>Daily Driving Hours<span class="text-danger">*</span></label>
+						<select class="form-control form-control-lg fs-15px" name="daily_driving_hours" >
+							<option>01-10</option>
+							<option>11-15</option>
+							<option>16-24</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Country <span class="text-danger">*</span></label>
+						<select class="form-control form-control-lg fs-15px" name="country">
+							<option>India</option>
+							<option>Canada</option>
+							<option>United States of America</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Gender <span class="text-danger">*</span></label>
+						<select class="form-control form-control-lg fs-15px" name="gender">
+							<option>Male</option>
+							<option>Female</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Date of Birth <span class="text-danger">*</span></label>
+						<div class="row">
+							<div class="col-4">
+								<select class="form-control form-control-lg fs-15px">
+									<option>Month</option>
+									<option>January</option>
+									<option>Febuary</option>
+									<option>March</option>
+									<option>April</option>
+									<option>May</option>
+									<option>June</option>
+									<option>July</option>
+									<option>August</option>
+									<option>September</option>
+									<option>October</option>
+									<option>November</option>
+									<option>December</option>									
+								</select>
+							</div>
+							<div class="col-4">
+								<select class="form-control form-control-lg fs-16px">
+									<option>Day</option>
+									<option>01</option>
+									<option>02</option>
+									<option>03</option>
+									<option>04</option>
+									<option>05</option>
+								</select>
+							</div>
+							<div class="col-4">
+								<select class="form-control form-control-lg fs-15px">
+									<option>Year</option>
+									<option>1990</option>
+									<option>1991</option>
+									<option>1992</option>
+									<option>1993</option>
+									<option>1994</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label>Vehicle Type<span class="text-danger">*</span></label>
+						<select class="form-control form-control-lg fs-15px">
+							<option>Car</option>
+							<option>Bus</option>
+							<option>Truck</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<div class="custom-control custom-checkbox">
+							<input class="custom-control-input" type="checkbox" value="" id="customCheck1" />
+							<label class="custom-control-label fw-500" for="customCheck1">I have read and agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-lg fs-15px fw-500 btn-block">Sign Up</button>
+					</div>
+					<!--{% if messages %}
+					{% for message in messages %}
+						<h2 style="color:green;">{{message}}</h2>
+					{% endfor %}
+					{% endif %} -->
+					<div class="text-muted text-center">
+						Already have an Admin ID? <a href="/">Sign In</a>
+					</div>
+				</form>
+			</div>
+			<!-- END register-content -->
+		</div>
+		<!-- END register -->
+		
+		<!-- BEGIN btn-scroll-top -->
+		<a href="#" data-click="scroll-top" class="btn-scroll-top fade"><i class="fa fa-arrow-up"></i></a>
+		<!-- END btn-scroll-top -->
+	</div>
+	<!-- END #app -->
+	
+	<!-- ================== BEGIN core-js ================== -->
+	<script src="assets/js/app.min.js"></script>
+	<!-- ================== END core-js ================== -->
+	
+</body>
+</html>

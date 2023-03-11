@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>PyStars | Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<link rel='stylesheet' type="text/css" href="{% static 'css/app.min.css' %}">
+	<!-- ================== BEGIN core-css ================== -->
+	<!--link href="static/css/app.min.css" rel="stylesheet" /!-->
+	<!-- ================== END core-css ================== -->
+	
+</head>
+
+</style>
+<body>
+	<!-- BEGIN #app -->
+	<div id="app" class="app">
+		<!-- BEGIN #header -->
+		<div id="header" class="app-header">
+			<!-- BEGIN mobile-toggler -->
+			<div class="mobile-toggler">
+				<button type="button" class="menu-toggler" data-toggle="sidebar-mobile">
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</button>
+			</div>
+			<!-- END mobile-toggler -->
+			
+			<!-- BEGIN brand -->
+			<div class="brand">
+				<div class="desktop-toggler">
+					<button type="button" class="menu-toggler" data-toggle="sidebar-minify">
+						<span class="bar"></span>
+						<span class="bar"></span>
+					</button>
+				</div>
+				
+				<a href="#" class="brand-logo">
+					<h2>PyStars</h2>
+				</a>
+			</div>
+			<!-- END brand -->
+			
+			<!-- BEGIN menu -->
+			<div class="menu">
+				<form class="menu-search" method="POST" name="header_search_form">
+				
+					<div class="menu-search-input">
+						
+					</div>
+				</form>
+				<div class="menu-item dropdown">
+					<a href="#" data-toggle="dropdown" data-display="static" class="menu-link">
+						<div class="menu-icon"><i class="fa fa-bell nav-icon"></i></div>
+						<div class="menu-label">3</div>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right dropdown-notification">
+						<h6 class="dropdown-header text-gray-900 mb-1">Notifications</h6>
+						<a href="#" class="dropdown-notification-item">
+							<div class="dropdown-notification-icon">
+								<i class="fa fa-receipt fa-lg fa-fw text-success"></i>
+							</div>
+							<div class="dropdown-notification-info">
+								<div class="title">Your store has a new order for 2 items totaling $1,299.00</div>
+								<div class="time">just now</div>
+							</div>
+							<div class="dropdown-notification-arrow">
+								<i class="fa fa-chevron-right"></i>
+							</div>
+						</a>
+						<a href="#" class="dropdown-notification-item">
+							<div class="dropdown-notification-icon">
+								<i class="far fa-user-circle fa-lg fa-fw text-muted"></i>
+							</div>
+							<div class="dropdown-notification-info">
+								<div class="title">3 new customer account is created</div>
+								<div class="time">2 minutes ago</div>
+							</div>
+							<div class="dropdown-notification-arrow">
+								<i class="fa fa-chevron-right"></i>
+							</div>
+						</a>
+						<a href="#" class="dropdown-notification-item">
+							<div class="dropdown-notification-icon">
+								<img src="static/img/icon/android.svg" alt="" width="26" />
+							</div>
+							<div class="dropdown-notification-info">
+								<div class="title">Your android application has been approved</div>
+								<div class="time">5 minutes ago</div>
+							</div>
+							<div class="dropdown-notification-arrow">
+								<i class="fa fa-chevron-right"></i>
+							</div>
+						</a>
+						<a href="#" class="dropdown-notification-item">
+							<div class="dropdown-notification-icon">
+								<img src="static/img/icon/paypal.svg" alt="" width="26" />
+							</div>
+							<div class="dropdown-notification-info">
+								<div class="title">Paypal payment method has been enabled for your store</div>
+								<div class="time">10 minutes ago</div>
+							</div>
+							<div class="dropdown-notification-arrow">
+								<i class="fa fa-chevron-right"></i>
+							</div>
+						</a>
+						<div class="p-2 text-center mb-n1">
+							<a href="#" class="text-gray-800 text-decoration-none">See all</a>
+						</div>
+					</div>
+				</div>
+				<div class="menu-item dropdown">
+					<a href="#" data-toggle="dropdown" data-display="static" class="menu-link">
+						<div class="menu-img online">
+							<img src="{% static 'img/user/user.jpg' %}" alt="" class="mw-100 mh-100 rounded-circle" />
+						</div>
+						<div class="menu-text">{{user.email_address}}</div>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right mr-lg-3">
+						<a class="dropdown-item d-flex align-items-center" href="#">Edit Profile <i class="fa fa-user-circle fa-fw ml-auto text-gray-400 f-s-16"></i></a>
+						<a class="dropdown-item d-flex align-items-center" href="#">Inbox <i class="fa fa-envelope fa-fw ml-auto text-gray-400 f-s-16"></i></a>
+						<a class="dropdown-item d-flex align-items-center" href="#">Calendar <i class="fa fa-calendar-alt fa-fw ml-auto text-gray-400 f-s-16"></i></a>
+						<a class="dropdown-item d-flex align-items-center" href="#">Setting <i class="fa fa-wrench fa-fw ml-auto text-gray-400 f-s-16"></i></a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item d-flex align-items-center" href="#">Log Out <i class="fa fa-toggle-off fa-fw ml-auto text-gray-400 f-s-16"></i></a>
+					</div>
+				</div>
+			</div>
+			<!-- END menu -->
+		</div>
+		<!-- END #header -->
+		
+		<!-- BEGIN #sidebar -->
+		<div id="sidebar" class="app-sidebar">
+			<!-- BEGIN scrollbar -->
+			<div class="app-sidebar-content" data-scrollbar="true" data-height="100%">
+				<!-- BEGIN menu -->
+				<div class="menu">
+					<div class="menu-header">Navigation</div>
+					<div class="menu-item active">
+						<a href="index.html" class="menu-link">
+							<span class="menu-icon"><i class="fa fa-laptop"></i></span>
+							<span class="menu-text">Dashboard</span>
+						</a>
+					</div>
+					<div class="menu-item">
+						<a href="/analytics" class="menu-link">
+							<span class="menu-icon"><i class="fa fa-chart-pie"></i></span>
+							<span class="menu-text">Analytics</span>
+						</a>
+					</div>
+					
+					<div class="menu-divider"></div>
+				</div>
+				<!-- END menu -->
+			</div>
+			<!-- END scrollbar -->
+			
+			<!-- BEGIN mobile-sidebar-backdrop -->
+			<button class="app-sidebar-mobile-backdrop" data-dismiss="sidebar-mobile"></button>
+			<!-- END mobile-sidebar-backdrop -->
+		</div>
+		<!-- END #sidebar -->
+		
+		<!-- BEGIN #content -->
+		<div id="content" class="app-content">
+		<!--<video id="video" width="640" height="480" autoplay></video>
+		<Script>
+		var video = document.getElementById('video');
+
+// Get access to the camera!
+if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    // Not adding `{ audio: true }` since we only want video now
+    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+        //video.src = window.URL.createObjectURL(stream);
+        video.srcObject = stream;
+        video.play();
+    });
+}
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+var video = document.getElementById('video');
+
+// Trigger photo take
+document.getElementById("snap").addEventListener("click", function() {
+	context.drawImage(video, 0, 0, 640, 480);
+});
+		</Script>-->
+ 
+            
+			<h1 class="page-header mb-3">
+				Hi, {{user.first_name}} <small>here's what's happening with your drive today.</small>
+			</h1>
+		
+			<!-- BEGIN row -->
+			<div class="row">
+				<!-- BEGIN col-6 -->
+				<div class="col-xl-6">
+					<!-- BEGIN card -->
+		<!--video id="video" width="600" height="370" autoplay></video> -->
+		<img src="{% url 'video_feed' %}" width="600" height="370"> 
+		<Script>
+		var video = document.getElementById('video');
+
+// Get access to the camera!
+if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    // Not adding `{ audio: true }` since we only want video now
+    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+        //video.src = window.URL.createObjectURL(stream);
+        video.srcObject = stream;
+        video.play();
+    });
+}
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+var video = document.getElementById('video');
+
+// Trigger photo take
+document.getElementById("snap").addEventListener("click", function() {
+	context.drawImage(video, 0, 0, 600, 370);
+});
+		</Script>
+					<!-- END card -->
+				</div>	
+				<!-- END col-6 -->
+				
+				<!-- BEGIN col-6 -->
+				<div class="col-xl-6">
+					<!-- BEGIN card -->
+					<div class="card mb-3">
+						<!-- BEGIN card-body -->
+						<div class="card-body">
+							<div class="d-flex mb-3">
+								<div class="flex-grow-1">
+									<h5 class="mb-1">Drowsy Meter</h5>
+									<div class="fs-13px">Driver's Drowsy Meter</div>
+								</div>
+								<a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-redo"></i></a>
+							</div>
+							<script src="{% static 'plugins/apexcharts/dist/apexcharts.min.js' %}"></script>
+							<div id="apexLineChart"></div>
+							<script>
+								var apexLineChartOptions = {
+								  chart: {
+									height: 350,
+									type: 'line',
+									shadow: {
+									  enabled: true,
+									  color: COLOR_GRAY_500,
+									  top: 18,
+									  left: 7,
+									  blur: 10,
+									  opacity: 1
+									},
+									toolbar: {
+									  show: false
+									}
+								  },
+								  title: {
+									text: 'Average High & Low Temperature',
+									align: 'center'
+								  },
+								  colors: [COLOR_BLUE, COLOR_TEAL],
+								  dataLabels: {
+									enabled: true,
+								  },
+								  stroke: {
+									curve: 'smooth',
+									width: 3
+								  },
+								  series: [{
+									name: 'High - 2020',
+									data: [28, 29, 33, 36, 32, 32, 33]
+								  }, {
+									name: 'Low - 2020',
+									data: [12, 11, 14, 18, 17, 13, 13]
+								  }],
+								  grid: {
+									borderColor: COLOR_GRAY_200,
+									row: {
+									  colors: [COLOR_GRAY_200, 'transparent'],
+									  opacity: 0.5
+									},
+								  },
+								  markers: {
+									size: 4
+								  },
+								  xaxis: {
+									categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+									axisBorder: {
+									  show: true,
+									  color: COLOR_GRAY_300,
+									  height: 1,
+									  width: '100%',
+									  offsetX: 0,
+									  offsetY: -1
+									},
+									axisTicks: {
+									  show: true,
+									  borderType: 'solid',
+									  color: COLOR_GRAY_300,
+									  height: 6,
+									  offsetX: 0,
+									  offsetY: 0
+									}
+								  },
+								  yaxis: {
+									min: 5,
+									max: 40
+								  },
+								  legend: {
+									show: true,
+									position: 'top',
+									offsetY: -10,
+									horizontalAlign: 'right',
+									floating: true
+								  }
+								};
+								var apexLineChart = new ApexCharts(
+								  document.querySelector('#apexLineChart'),
+								  apexLineChartOptions
+								);
+								apexLineChart.render();
+							  </script>
+						</div>
+						<!-- END card-body -->
+					</div>
+					<!-- END card -->
+				</div>	
+				<!-- END col-6 -->
+			</div>
+			<!-- END row -->
+			
+			<!-- BEGIN row -->
+			<div class="row">
+				<!-- BEGIN col-6 -->
+				<div class="col-xl-6">
+					<!-- BEGIN card -->
+					<div class="card mb-3">
+						<!-- BEGIN card-body -->
+						<div class="card-body">
+							<div class="d-flex align-items-center mb-4">
+								<div class="flex-grow-1">
+									<h5 class="mb-1">Driver's Performance</h5>
+									<div class="fs-13px">Last 3 Performance</div>
+								</div>
+								<a href="#">See All</a>
+							</div>
+							
+							<!-- product-1 -->
+							<div class="d-flex align-items-center mb-3">
+								
+								<div class="flex-grow-1">
+									<div>
+										
+										<div class="text-dark font-weight-600">Toronto to Ottawa</div>
+										<div class="fs-13px">via Car</div>
+									</div>
+								</div>
+								<div class="pl-3 text-center">
+									<div class="text-dark font-weight-600">500</div>
+									<div class="fs-13px">KMs</div>
+								</div>
+							</div>
+							<div class="d-flex align-items-center mb-3">
+								
+								<div class="flex-grow-1">
+									<div>
+										
+										<div class="text-dark font-weight-600">Toronto to Kitchner</div>
+										<div class="fs-13px">via Bus</div>
+									</div>
+								</div>
+								<div class="pl-3 text-center">
+									<div class="text-dark font-weight-600">200</div>
+									<div class="fs-13px">KMs</div>
+								</div>
+							</div>
+							<div class="d-flex align-items-center mb-3">
+								
+								<div class="flex-grow-1">
+									<div>
+										
+										<div class="text-dark font-weight-600">Toronto to Montreal</div>
+										<div class="fs-13px">via Truck</div>
+									</div>
+								</div>
+								<div class="pl-3 text-center">
+									<div class="text-dark font-weight-600">1000</div>
+									<div class="fs-13px">KMs</div>
+								</div>
+							</div>
+							
+							
+							
+							<!-- product-4 -->
+							
+							
+							<!-- product-5 -->
+						
+						</div>
+						<!-- END card-body -->
+					</div>
+					<!-- END card -->
+				</div>
+				<!-- END col-6 -->
+				
+				<!-- BEGIN col-6 -->
+				<div class="col-xl-6">
+					<!-- BEGIN card -->
+					<div class="card">
+						<!-- BEGIN card-body -->
+						<div class="card-body">
+							<div class="d-flex align-items-center mb-2">
+								<div class="flex-grow-1">
+									<h5 class="mb-1">Driving Details</h5>
+									<div class="fs-13px">Latest Driving Statistics</div>
+								</div>
+								<a href="#">See All</a>
+							</div>
+							
+							<!-- BEGIN table-responsive -->
+							<div class="table-responsive mb-n2">
+								<table class="table table-borderless mb-0">
+									<thead>
+										<tr class="text-dark">
+											<th class="pl-0">No</th>
+											<th>Order Details</th>
+											<th class="text-center">Status</th>
+											<th class="text-right pr-0">Amount</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="pl-0">1.</td>
+											<td>
+												<div class="d-flex align-items-center">
+													
+													<div class="ml-3 flex-grow-1">
+														<div class="font-weight-600 text-dark">Macbook Pro 15 inch</div>
+														<div class="fs-13px">5 minutes ago</div>
+													</div>
+												</div>
+											</td>
+											<td class="text-center"><span class="label bg-success-transparent-2 text-success" style="min-width: 60px;">Success</span></td>
+											<td class="text-right pr-0">$1,699.00</td>
+										</tr>
+										<tr>
+											<td class="pl-0">2.</td>
+											<td>
+												<div class="d-flex align-items-center">
+													
+													<div class="ml-3 flex-grow-1">
+														<div class="font-weight-600 text-dark">Apple Watch 5 Series</div>
+														<div class="fs-13px">5 minutes ago</div>
+													</div>
+												</div>
+											</td>
+											<td class="text-center"><span class="label bg-success-transparent-2 text-success" style="min-width: 60px;">Success</span></td>
+											<td class="text-right pr-0">$699.00</td>
+										</tr>
+										<tr>
+											<td class="pl-0">3.</td>
+											<td>
+												<div class="d-flex align-items-center">
+													
+													<div class="ml-3 flex-grow-1">
+														<div class="font-weight-600 text-dark">iPhone 11 Pro Max</div>
+														<div class="fs-13px">12 minutes ago</div>
+													</div>
+												</div>
+											</td>
+											<td class="text-center"><span class="label bg-warning-transparent-2 text-warning" style="min-width: 60px;">Pending</span></td>
+											<td class="text-right pr-0">$1,299.00</td>
+										</tr>
+									
+										
+									</tbody>
+								</table>
+							</div>
+							<!-- END table-responsive -->
+						</div>
+						<!-- END card-body -->
+					</div>
+					<!-- END card -->
+				</div>
+				<!-- END col-6 -->
+			</div>
+			<!-- END row -->
+		</div>
+		<!-- END #content -->
+		
+		<!-- BEGIN btn-scroll-top -->
+		<a href="#" data-click="scroll-top" class="btn-scroll-top fade"><i class="fa fa-arrow-up"></i></a>
+		<!-- END btn-scroll-top -->
+	</div>
+	<!-- END #app -->
+	
+	<!-- ================== BEGIN core-js ================== -->
+	<script src="static/js/app.min.js"></script>
+	<!-- ================== END core-js ================== -->
+	
+	<!-- ================== BEGIN page-js ================== -->
+	<script src="static/plugins/apexcharts/dist/apexcharts.min.js"></script>
+	<script src="static/js/demo/dashboard.demo.js"></script>
+	<!-- ================== END page-js ================== -->
+</body>
+</html>
