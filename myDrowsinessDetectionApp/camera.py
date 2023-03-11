@@ -56,7 +56,7 @@ class VideoCamera():
                 engine = pyttsx3.init()
                 engine.say("Please wake up sir you are sleeping, drive slowly")
                 engine.runAndWait()
-                print("drowsiness is detected")
+                print("Alert!! drowsiness is detected")
             else:
                 cv2.putText(image, "Hello. you are looking smart!!", (10, 90), cv2.FONT_HERSHEY_TRIPLEX, 0.7, (255, 0, 0), 2)       
             for (x, y) in Deriveshape:
